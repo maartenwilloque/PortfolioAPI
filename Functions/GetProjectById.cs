@@ -47,7 +47,7 @@ namespace portfolioapi.Functions
                 summary = project.Summary,
                 description = project.Description,
                 projectLink = project.ProjectLink,
-                pictures = p.Pictures.Split(','),
+                pictures = project.Pictures.Split(','),
                 tags = project.Tags.Select(t => new
                 {
                     id = t.PTag.Id,
