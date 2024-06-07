@@ -32,6 +32,7 @@ namespace portfolioapi.Functions
             var projects = await _context.Projects
                 .Include(p => p.Tags)
                 .ThenInclude(pt => pt.PTag)
+                .OrderBy(p => p.Year)
                 .ToListAsync();
 
             var result = projects.Select(p => new
